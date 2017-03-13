@@ -1,0 +1,22 @@
+{
+  "name": "simplevue",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Gonzalo Guevara <gonzarock@yahoo.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "^2.2.1",
+    "axios": "^0.15.3",
+    "materialize": "^0.98.0"
+  }
+}
