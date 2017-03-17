@@ -4,6 +4,18 @@
 <head>
     <title>Welcome to Vue</title>
     <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB2B3CBZijw9ZTCDG539UGL5Y2obK3B2GU",
+            authDomain: "gontest-1aa98.firebaseapp.com",
+            databaseURL: "https://gontest-1aa98.firebaseio.com",
+            storageBucket: "gontest-1aa98.appspot.com",
+            messagingSenderId: "534474590495"
+        };
+        firebase.initializeApp(config);
+    </script>
 </head>
 
 <body>
@@ -13,7 +25,7 @@
 
         <div class="debug">
             <pre>
-                {{ tareas }}
+                {{ $data }}
             </pre>
         </div>
     </div>
@@ -36,9 +48,13 @@
     <template id="lista-task">
         <div class="tareas">
             <ul>
-                <li v-for="tarea in tareas">
+                <li v-for="tarea, i in tareas">
                     {{ tarea.title }}
                     <input type="checkbox" v-model="tarea.complete">
+                    <input type="text" v-model="tarea.title" v-show="editandoTarea === i">
+                    <button v-if="editandoTarea != i" v-on:click="editandoTarea = i">Editar Tarea</button>
+                    <button v-if="editandoTarea === i" v-on:click="editandoTarea = null">Guardar</button>
+                    <button v-on:click="eliminarTarea(i)">Eliminar Tarea</button>
                 </li>
             </ul>
         </div>
@@ -46,7 +62,7 @@
 
 
 
-    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="bower_components/vue/dist/vue.js"></script>
     <script src="bower_components/axios/dist/axios.js"></script>
     <script src="js/1_intro.js"></script>
 

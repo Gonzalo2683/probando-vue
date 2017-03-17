@@ -1,6 +1,19 @@
 Vue.component('lista-tareas', {
     template: '#lista-task',
-    props: ['tareas']
+    props: ['tareas'],
+    data: function(){
+        return {
+            editandoTarea: null
+        }
+    },
+    methods: {
+        eliminarTarea: function(tarea){
+            this.tareas.splice(tarea,1);
+        },
+        editarTarea: function(){
+
+        }
+    }
 });
 
 Vue.component('nueva-tarea', {
@@ -63,7 +76,7 @@ new Vue({
     methods: {
         pleaseAgregaTarea: function (datos) {
             console.log(datos);
-            this.tareas.push(datos);
+            this.tareas.unshift(datos);
         }
     }
 });
