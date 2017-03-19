@@ -17,6 +17,7 @@
   "dependencies": {
     "vue": "^2.2.1",
     "axios": "^0.15.3",
-    "materialize": "^0.98.0"
+    "materialize": "^0.98.0",
+    "bootstrap": "^3.3.7"
   }
 }

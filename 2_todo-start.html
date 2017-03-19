@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Vue</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/todos.css">
+</head>
+
+<body>
+    <div id="todo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="todolist not-done">
+                        <h1>Todos</h1>
+                        <input type="text" class="form-control add-todo" placeholder="Agregar todo">
+                        <button id="checkAll" class="btn btn-info">Agregar</button>
+
+                        <hr>
+                        <ul id="sortable" class="list-unstyled">
+                            <li class="ui-state-default">
+                                <div class="checkbox">
+                                    <label>
+                                <input type="checkbox" value="" />Salir a correr</label>
+                                </div>
+                            </li>
+                            <li class="ui-state-default">
+                                <div class="checkbox">
+                                    <label>
+                                <input type="checkbox" value="" />Compar pan</label>
+                                </div>
+                            </li>
+                            <li class="ui-state-default">
+                                <div class="checkbox">
+                                    <label>
+                                <input type="checkbox" value="" />Aprender Vue</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="todo-footer">
+                            <strong><span class="count-todos"></span></strong> Total todos: 3
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="bower_components/vue/dist/vue.js"></script>
+    <script src="js/2_todo-start.js"></script>
+
+</body>
+
+</html>
