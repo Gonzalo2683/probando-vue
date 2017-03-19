@@ -15,14 +15,14 @@
                 <div class="col-md-6">
                     <div class="todolist not-done">
                         <h1>Todos</h1>
-                        <input type="text" class="form-control add-todo" placeholder="Agregar todo" v-model='nuevoTodo'>
+                        <input type="text" class="form-control add-todo" placeholder="Agregar todo" v-model='nuevoTodo' v-on:keyup.enter="agregaTodo">
                         <button id="checkAll" class="btn btn-info" v-on:click="agregaTodo">Agregar</button>
 
                         <hr>
                         <ul id="sortable" class="list-unstyled">
                             <li class="ui-state-default" v-for="todo in todos">
                                 <div class="checkbox">
-                                    <label>
+                                    <label v-bind:class="{ completed: todo.completado }">
                                         <input type="checkbox" :value="todo.title" v-model="todo.completado" />{{ todo.title }}
                                     </label>
                                 </div>
