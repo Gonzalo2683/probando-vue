@@ -34,6 +34,10 @@ li.ui-state-default:last-child{
     border-bottom:1px solid #ddd;
     text-decoration:line-through;
 }
+
+#done-items li label {
+    text-decoration:line-through;
+}
 #done-items li:last-child{
     border-bottom:none;
 }

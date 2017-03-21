@@ -33,14 +33,19 @@
                 </div>
                 <div class="col-md-6">
                     <div class="todolist">
-                    <h1>Completados</h1>
+                    <h1>Completados: {{calcularTotal}}</h1>
                         <ul id="done-items" class="list-unstyled">
-                            <li v-for="todoCom, i in todosCompletados">{{ todoCom.title }}
-                                
-                                <button class="remove-item btn btn-default btn-xs pull-right" v-on:click="eliminarTodo(i)">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </button>
-                                <input type="checkbox" :value="todoCom.title" v-model="todoCom.completado" />
+                            <li v-for="todoCom, i in todosCompletados">
+
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" :value="todoCom.title" v-model="todoCom.completado" /> {{ todoCom.title }}
+                                    </label>
+                                    <button class="remove-item btn btn-default btn-xs pull-right" v-on:click="eliminarTodo(i)">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+
+                                </div>
                             </li>
                         </ul>
                         <div class="todo-footer">
