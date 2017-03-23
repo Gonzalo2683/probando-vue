@@ -43,7 +43,7 @@ new Vue({
     },
     methods: {
         agregaTodo: function () {
-            if (this.valiaTodo()) {
+            if (this.validaTodo()) {
                 var texto = this.nuevoTodo.trim();
                 this.todos.unshift({
                     title: texto,
@@ -58,7 +58,7 @@ new Vue({
         eliminarTodo: function (index) {
             this.todos.splice(index, 1);
         },
-        valiaTodo: function () {
+        validaTodo: function () {
             return this.nuevoTodo !== '';
         }
     }
