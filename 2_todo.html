@@ -41,7 +41,7 @@
                                     <label>
                                         <input type="checkbox" :value="todoCom.title" v-model="todoCom.completado" /> {{ todoCom.title }}
                                     </label>
-                                    <button class="remove-item btn btn-default btn-xs pull-right" v-on:click="eliminarTodo(i)">
+                                    <button class="remove-item btn btn-default btn-xs pull-right" v-on:click="eliminarTodo(todoCom, i)">
                                         <span class="glyphicon glyphicon-remove"></span>
                                     </button>
 

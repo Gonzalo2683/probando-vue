@@ -6,7 +6,8 @@ new Vue({
             {completado: false, title: 'Aprender vue'},
             {completado: false, title: 'Salir a correr'}
         ],
-        nuevoTodo: ''
+        nuevoTodo: '',
+        completados: []
     },
     computed: {
         calcularTotal: function () {
@@ -55,8 +56,12 @@ new Vue({
             }
 
         },
-        eliminarTodo: function (index) {
-            this.todos.splice(index, 1);
+        eliminarTodo: function (todo, i) {
+            console.log(todo, 'todo');
+            const todoIndex = this.todos.indexOf(todo);
+            console.log(todoIndex, 'index buscado');
+            console.log(i, 'index actual');
+            //this.todos.splice(todoIndex, 1);
         },
         validaTodo: function () {
             return this.nuevoTodo !== '';
