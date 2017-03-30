@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "typescript": "^2.2.1",
     "vue": "^2.2.1"
   },
