@@ -55,8 +55,9 @@ new Vue({
             }
 
         },
-        eliminarTodo: function (index) {
-            this.todos.splice(index, 1);
+        eliminarTodo: function (todo) {
+            var currentTodo = this.todos.indexOf(todo);
+            this.todos.splice(currentTodo, 1);
         },
         validaTodo: function () {
             return this.nuevoTodo !== '';
