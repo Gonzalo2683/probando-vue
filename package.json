@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "browser-sync": "^2.18.8",
     "typescript": "^2.2.1",
     "vue": "^2.2.1"
   },
