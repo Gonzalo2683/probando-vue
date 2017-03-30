@@ -11,7 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "browser-sync start --server --files js/*.js 0_basic-start.html"
+    "dev": "browser-sync start --server --files js/*.js *.html"
   },
   "author": "",
   "license": "ISC"
