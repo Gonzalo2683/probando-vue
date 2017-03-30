@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Vue</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/todos.css">
+</head>
+
+<body>
+    <div id="todo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="todolist not-done">
+                        <h1>Todos</h1>
+                        <input type="text" class="form-control add-todo" placeholder="Agregar todo" v-model='nuevoTodo' v-on:keyup.enter="agregaTodo">
+                        <button id="checkAll" class="btn btn-info" v-on:click="agregaTodo">Agregar</button>
+
+                        <hr>
+                        <ul id="sortable" class="list-unstyled">
+                            <li class="ui-state-default" v-for="todo in todosPorCompletar">
+                                <div class="checkbox">
+                                    <label v-bind:class="{ completed: todo.completado }">
+                                        <input type="checkbox" :value="todo.title" v-model="todo.completado" />{{ todo.title }}
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="todolist">
+                    <h1>Completados: {{calcularTotal}}</h1>
+                        <ul id="done-items" class="list-unstyled">
+                            <li v-for="todoCom, i in todosCompletados">
+
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" :value="todoCom.title" v-model="todoCom.completado" /> {{ todoCom.title }}
+                                    </label>
+                                    <button class="remove-item btn btn-default btn-xs pull-right" v-on:click="eliminarTodo(i)">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="todo-footer">
+                            <strong><span class="count-todos"></span></strong> Total todos completados: {{ calcularTotal }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="bower_components/vue/dist/vue.js"></script>
+    <script src="js/2_todo.js"></script>
+
+</body>
+
+</html>
